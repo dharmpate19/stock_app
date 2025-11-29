@@ -113,7 +113,7 @@ const SignUp = () => {
 
 
       <Button type="submit" disabled={isSubmitting} className="yellow-btn w-full mt-5">
-        {isSubmitting ? 'Creating account' : 'StartYour Investing Journey'}
+        {isSubmitting ? 'Creating account...' : 'Start Your Investing Journey'}
       </Button>
 
       <FooterLink text="Already have an account?" linkText="Sign In" href="/sign-in"/>
