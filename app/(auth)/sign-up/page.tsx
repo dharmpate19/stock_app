@@ -42,7 +42,7 @@ const SignUp = () => {
         <InputField 
           name="fullName" 
           label="Full Name" 
-          placeholder="Jhon Doe"
+          placeholder="John Doe"
           register={register}
           error={errors.fullName}
           validation={{required : 'Full name is required', minLength : 2}}
@@ -51,10 +51,16 @@ const SignUp = () => {
         <InputField 
           name="email" 
           label="Email" 
-          placeholder="jhondoe@gmail.com"
+          placeholder="johndoe@gmail.com"
           register={register}
           error={errors.email}
-          validation={{required : 'Email is required', pattern : /^\w+@\w+\.\w+$/, message : 'Invalid Email address'}}
+          validation={{
+            required: 'Email is required',
+            pattern: {
+              value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+              message: 'Invalid Email address'
+            }
+          }}
         />
 
         <InputField 
@@ -107,7 +113,7 @@ const SignUp = () => {
 
 
       <Button type="submit" disabled={isSubmitting} className="yellow-btn w-full mt-5">
-        {isSubmitting ? 'Creating account' : 'StartYour Investing Journey'}
+        {isSubmitting ? 'Creating account...' : 'Start Your Investing Journey'}
       </Button>
 
       <FooterLink text="Already have an account?" linkText="Sign In" href="/sign-in"/>

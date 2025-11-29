@@ -1,4 +1,4 @@
-import { Label } from '@radix-ui/react-label'
+import { Label } from '@/components/ui/label'
 import React from 'react'
 import { Controller } from 'react-hook-form'
 import {
@@ -25,6 +25,7 @@ const SelectField = ({name, label, placeholder, options, control, error, require
             required : required ? `Please select ${label.toLowerCase()}` : false
         }}
         render={({field}) => (
+            <>
             <Select value={field.value} onValueChange={field.onChange}>
                 <SelectTrigger className="select-trigger ">
                     <SelectValue placeholder={placeholder} />
@@ -36,8 +37,9 @@ const SelectField = ({name, label, placeholder, options, control, error, require
                     </SelectItem>
                    ))} 
                 </SelectContent>
-                {error && <p className='text-sm text-red-500'>{error.message}</p>}
             </Select>
+            {error && <p className='text-sm text-red-500'>{error.message}</p>}
+            </>
         )}
         />
         
