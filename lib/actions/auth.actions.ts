@@ -21,6 +21,7 @@ export const signUpWithEmail = async({ email, password, fullName, country, inves
 
     } catch(e) {
         console.log('Sign up failed', e);
+        // @ts-expect-error: e may not have body or message properties
         return { success :  false , error : e?.body?.message || e?.message ||  'Sign up failed'}
     }
 }
@@ -33,6 +34,7 @@ export const signInWithEmail = async({ email, password}: SignInFormData) => {
 
     } catch(e) {
         console.log('Sign in failed', e);
+        // @ts-expect-error: e may not have body or message properties
         return { success :  false , error : e?.body?.message || e?.message || 'Sign in failed'}
     }
 }
