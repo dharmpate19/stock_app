@@ -33,5 +33,5 @@ export const connectToDatabase = async() => {
 
     console.log(`Connected to database ${process.env.NODE_ENV}`);
 
-    return cahced.conn
+    return cached.conn
 }
